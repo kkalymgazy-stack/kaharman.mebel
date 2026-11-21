@@ -1,0 +1,213 @@
+!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAHARMAN.MEBEL | Өскемен</title>
+<style>
+.card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5f2ed;
+        color: #29251f;
+    }
+    header {
+        background: #211e19;
+        color: white;
+        padding: 25px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header h1 {
+        font-size: 25px;
+        letter-spacing: 2px;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 25px;
+    }
+    .hero {
+        min-height: 550px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 80px 10%;
+        background: linear-gradient(90deg, #29251f, #655746);
+        color: white;
+    }
+    .hero h2 {
+        font-size: 55px;
+        max-width: 700px;
+        margin-bottom: 25px;
+    }
+    .hero p {
+        font-size: 19px;
+        margin-bottom: 35px;
+    }
+    .button {
+        display: inline-block;
+        background: #c6a77b;
+        color: #211e19;
+        padding: 16px 30px;
+        text-decoration: none;
+        width: fit-content;
+        font-weight: bold;
+    }
+    section {
+        padding: 70px 10%;
+    }
+    section h2 {
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
+    .products {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    .card {
+        background: white;
+        padding: 35px;
+        text-align: center;
+        border-radius: 8px;
+    }
+.card {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card summary {
+    list-style: none;
+}
+
+.card summary::-webkit-details-marker {
+    display: none;
+}
+
+.choices {
+    margin-top: 25px;
+    text-align: left;
+    line-height: 2.5;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+    .card h3 {
+        margin-bottom: 15px;
+    }
+    .about {
+        background: #e8e1d6;
+        line-height: 1.8;
+    }
+    footer {
+        background: #211e19;
+        color: white;
+        text-align: center;
+        padding: 30px;
+    }
+    @media (max-width: 700px) {
+        header {
+            flex-direction: column;
+            gap: 20px;
+        }
+        nav a {
+            margin: 5px;
+        }
+        .hero h2 {
+            font-size: 35px;
+        }
+        .products {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>KAHARMAN.MEBEL</h1>
+<nav>
+    <a href="#home">Басты бет</a>
+    <a href="#catalog">Каталог</a>
+    <a href="#about">Біз туралы</a>
+    <a href="#contacts">Байланыс</a>
+</nav>
+</header>
+<div class="hero" id="home">
+    <h2>Сіздің үйіңізге арналған ерекше жиһаз</h2>
+<p>Өскемен қаласында тапсырыспен сапалы жиһаз жасау.</p>
+<a href="#contacts" class="button">Тапсырыс беру</a>
+</div>
+<section id="catalog">
+    <h2>Біздің өнімдер</h2>
+<div class="products">
+<a href="asui.html" class="card card-link">
+    <h3>Асүй жиһазы</h3>
+    <p>Асүй гарнитурлары</p>
+    <b>Толығырақ →</b>
+</a>
+   
+    <details class="card">
+        <summary>
+            <h3>Шкафтар</h3>
+            <p>Әртүрлі үлгідегі шкафтар</p>
+            <br>
+            <b>Толығырақ ↓</b>
+        </summary>
+        <div class="choices">
+            <p>• Шкаф-купе</p>
+            <p>• Кіріктірілген шкаф</p>
+            <p>• Киім шкафтары</p>
+            <p>• Гардеробтар</p>
+        </div>
+    </details>
+
+    <details class="card">
+        <summary>
+            <h3>Жатын бөлме</h3>
+            <p>Жатын бөлмеге арналған жиһаз</p>
+            <br>
+            <b>Толығырақ ↓</b>
+        </summary>
+        <div class="choices">
+            <p>• Кереуеттер</p>
+            <p>• Тумбалар</p>
+            <p>• Комодтар</p>
+            <p>• Толық жатын гарнитуры</p>
+        </div>
+    </details>
+
+</div>
+   </div>
+</section>
+<section class="about" id="about">
+    <h2>Біз туралы</h2>
+<p>
+    KAHARMAN.MEBEL — Өскемен қаласында орналасқан
+    жиһаз жасау компаниясы. Біз әр клиенттің
+    қалауы мен қажеттілігіне сай жиһаз жасауға ұмтыламыз.
+</p>
+</section>
+<section id="contacts">
+    <h2>Бізбен байланысыңыз</h2>
+    <p>Қала: Өскемен</p>
+    <p>Тапсырыс беру үшін бізге хабарласыңыз.</p>
+</section>
+<footer>
+    <p>© 2026 KAHARMAN.MEBEL. Барлық құқықтар қорғалған.</p>
+</footer>
+</body>
+</html> 
