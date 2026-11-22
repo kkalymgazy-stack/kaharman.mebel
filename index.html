@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAHARMAN.MEBEL | Өскемен</title>
+    <title>KAKHARMAN.MEBEL | Өскемен</title>
 <style>
 .card-link {
     display: block;
@@ -15,7 +15,8 @@
         padding: 0;
         box-sizing: border-box;
     }
-    body {
+    <body> 
+{
         font-family: Arial, sans-serif;
         background: #f5f2ed;
         color: #29251f;
@@ -37,32 +38,74 @@
         text-decoration: none;
         margin-left: 25px;
     }
-    .hero {
-        min-height: 550px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 80px 10%;
-        background: linear-gradient(90deg, #29251f, #655746);
-        color: white;
+    .hero-slider {
+    position: relative;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    color: white;
+    background: #222;
+}
+
+.hero-slides {
+    position: absolute;
+    inset: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 1.5s ease, transform 5s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hero-slider::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.15)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero-content h2 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+    .hero-slider {
+        min-height: 500px;
+        padding: 50px 7%;
     }
-    .hero h2 {
-        font-size: 55px;
-        max-width: 700px;
-        margin-bottom: 25px;
+
+    .hero-content h2 {
+        font-size: 36px;
     }
-    .hero p {
-        font-size: 19px;
-        margin-bottom: 35px;
-    }
-    .button {
-        display: inline-block;
-        background: #c6a77b;
-        color: #211e19;
-        padding: 16px 30px;
-        text-decoration: none;
-        width: fit-content;
-        font-weight: bold;
     }
     section {
         padding: 70px 10%;
@@ -134,11 +177,95 @@
             grid-template-columns: 1fr;
         }
     }
+.button {
+    display: inline-block;
+    background: #211e19;
+    color: white !important;
+    padding: 15px 35px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #655746;
+    transform: translateY(-3px);
+}
+.catalog-section {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.catalog-section h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.catalog-subtitle {
+    color: #777;
+    margin-bottom: 35px;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.catalog-card {
+    position: relative;
+    height: 340px;
+    overflow: hidden;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.catalog-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.catalog-card:hover img {
+    transform: scale(1.08);
+}
+
+.catalog-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: left;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+.catalog-info h3 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.catalog-info span {
+    font-size: 14px;
+    color: #eee;
+}
+
+@media (max-width: 750px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 </head>
 <body>
 <header>
-    <h1>KAHARMAN.MEBEL</h1>
+    <h1>KAKHARMAN.MEBEL</h1>
 <nav>
     <a href="#home">Басты бет</a>
     <a href="#catalog">Каталог</a>
@@ -146,68 +273,109 @@
     <a href="#contacts">Байланыс</a>
 </nav>
 </header>
-<div class="hero" id="home">
-    <h2>Сіздің үйіңізге арналған ерекше жиһаз</h2>
-<p>Өскемен қаласында тапсырыспен сапалы жиһаз жасау.</p>
-<a href="#contacts" class="button">Тапсырыс беру</a>
-</div>
-<section id="catalog">
+<section class="hero-slider" id="home">
+
+    <div class="hero-slides">
+
+        <div class="hero-slide active"
+        style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920')">
+        </div>
+
+        <div class="hero-slide"
+        style="background-image:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920')">
+        </div>
+
+        <div class="hero-slide"
+        style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1920')">
+        </div>
+
+        <div class="hero-slide"
+        style="background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1920')">
+        </div>
+
+        <div class="hero-slide"
+        style="background-image:url('https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1920')">
+        </div>
+
+    </div>
+
+    <div class="hero-content">
+
+        <h2>KAKHARMAN.MEBEL</h2>
+
+        <p>
+            Сіздің арманыңыздағы жиһаз.
+            Сапа, стиль және мінсіз дизайн.
+        </p>
+
+        <a href="https://wa.me/77713310871"
+        class="button" target="_blank">
+            Тапсырыс беру
+        </a>
+
+    </div>
+
+</section>
+<section id="catalog" class="catalog-section">
+
     <h2>Біздің өнімдер</h2>
-<div class="products">
-<a href="asui.html" class="card card-link">
-    <h3>Асүй жиһазы</h3>
-    <p>Асүй гарнитурлары</p>
-    <b>Толығырақ →</b>
-</a>
-   
-    <details class="card">
-        <summary>
-            <h3>Шкафтар</h3>
-            <p>Әртүрлі үлгідегі шкафтар</p>
-            <br>
-            <b>Толығырақ ↓</b>
-        </summary>
-        <div class="choices">
-            <p>• Шкаф-купе</p>
-            <p>• Кіріктірілген шкаф</p>
-            <p>• Киім шкафтары</p>
-            <p>• Гардеробтар</p>
-        </div>
-    </details>
+    <p class="catalog-subtitle">Үйіңізге арналған ерекше жиһаздар</p>
 
-    <details class="card">
-        <summary>
-            <h3>Жатын бөлме</h3>
-            <p>Жатын бөлмеге арналған жиһаз</p>
-            <br>
-            <b>Толығырақ ↓</b>
-        </summary>
-        <div class="choices">
-            <p>• Кереуеттер</p>
-            <p>• Тумбалар</p>
-            <p>• Комодтар</p>
-            <p>• Толық жатын гарнитуры</p>
-        </div>
-    </details>
+    <div class="catalog-grid">
 
-</div>
-   </div>
+        <a href="asui.html" class="catalog-card">
+            <img src="https://images.unsplash.com/photo-1778074976002-6e5d96cc294a?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+            <div class="catalog-info">
+                <h3>Асүй жиһазы</h3>
+                <span>Толығырақ ↗️</span>
+            </div>
+        </a>
+
+        <a href="shkaf.html" class="catalog-card">
+            <img src="https://images.unsplash.com/photo-1769690398694-9c5d5ca4b4ea?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+            <div class="catalog-info">
+                <h3>Шкафтар</h3>
+                <span>Толығырақ ↗️</span>
+            </div>
+        </a>
+
+        <a href="zhatyn.html" class="catalog-card">
+            <img src="https://images.unsplash.com/photo-1758974817671-24f627809115?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+            <div class="catalog-info">
+                <h3>Жатын бөлме</h3>
+                <span>Толығырақ ↗️</span>
+            </div>
+        </a>
+
+    </div>
 </section>
 <section class="about" id="about">
     <h2>Біз туралы</h2>
 <p>
-    KAHARMAN.MEBEL — Өскемен қаласында орналасқан
+    KAKHARMAN.MEBEL — Өскемен қаласында орналасқан
     жиһаз жасау компаниясы. Біз әр клиенттің
-    қалауы мен қажеттілігіне сай жиһаз жасауға ұмтыламыз.
+    қалауы мен қажеттілігіне сай жиһаз жасауға ұмтыламыз.Бізді таңдағаныңызға рахмет.
 </p>
 </section>
 <section id="contacts">
     <h2>Бізбен байланысыңыз</h2>
     <p>Қала: Өскемен</p>
-    <p>Тапсырыс беру үшін бізге хабарласыңыз.</p>
+    <p>Тапсырыс беру үшін бізге хабарласыңыз. 8 771 331 0871 </p>
 </section>
 <footer>
-    <p>© 2026 KAHARMAN.MEBEL. Барлық құқықтар қорғалған.</p>
+    <p>© 2026 KAKHARMAN.MEBEL. Барлық құқықтар қорғалған.</p>
 </footer>
+<script>
+const slides = document.querySelectorAll('.hero-slide');
+let currentSlide = 0;
+
+if (slides.length > 1) {
+    setInterval(function() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 5000);
+}
+</script>
 </body>
 </html> 
